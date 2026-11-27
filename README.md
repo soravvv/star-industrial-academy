@@ -195,7 +195,7 @@ Images carry explicit `width`/`height` to prevent layout shift.
 
 ## Deployment (Vercel)
 
-1. Push this repository to GitHub (private).
+1. Push this repository to GitHub.
 2. In Vercel: **Add New → Project → Import** the repository.
 3. Framework preset: **Vite** (build `npm run build`, output `dist`) — detected automatically.
 4. Leave `VITE_REGISTRATION_API_URL` unset (see limitations above) and deploy.

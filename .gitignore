@@ -7,3 +7,6 @@ dist/
 .env.*
 !.env.example
 .vercel
+
+# Python bytecode from running the local API
+__pycache__/

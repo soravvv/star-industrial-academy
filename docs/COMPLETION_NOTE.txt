@@ -4,7 +4,7 @@ Completed: 27 November 2026
 Compensation: INR 701 (fixed, as agreed)
 
 REPOSITORY
-https://github.com/soravvv/star-industrial-academy  (private; reviewer access granted on request)
+https://github.com/soravvv/star-industrial-academy  (public)
 
 LIVE DEPLOYMENT (Vercel)
 https://star-industrial-academy.vercel.app
