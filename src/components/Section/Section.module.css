@@ -1,0 +1,59 @@
+.section {
+  padding-block: var(--section-padding);
+}
+
+/* ---- Tones ---- */
+
+.page {
+  background: var(--color-page);
+}
+
+.dark {
+  /* Re-point the focus ring so it stays visible on midnight. */
+  --color-focus: var(--color-sunrise);
+
+  background: var(--color-midnight);
+  color: var(--color-white);
+}
+
+/* ---- Layout ---- */
+
+.inner {
+  composes: container from '../../styles/layout.module.css';
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--font-size-h2);
+}
+
+.dark .title {
+  color: var(--color-white);
+}
+
+.intro {
+  max-width: 32rem;
+  margin: var(--space-3) 0 0;
+  font-size: var(--font-size-lg);
+}
+
+.dark .intro {
+  color: var(--color-on-dark-muted);
+}
+
+@media (min-width: 1024px) {
+  .split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-16);
+    align-items: start;
+  }
+
+  .split .header {
+    margin-bottom: 0;
+  }
+}

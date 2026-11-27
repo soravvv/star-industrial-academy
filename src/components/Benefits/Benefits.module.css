@@ -1,0 +1,40 @@
+.card {
+  composes: card from '../../styles/layout.module.css';
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+/* Icon beside the title on mobile, above it from tablet up. */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.iconBadge {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-cta);
+  background: var(--color-teal);
+  color: var(--color-white);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+}
+
+.description {
+  margin: var(--space-4) 0 0;
+}
+
+@media (min-width: 768px) {
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+  }
+}

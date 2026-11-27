@@ -1,0 +1,75 @@
+/*
+ * Design tokens — the single source of truth for colours, type, spacing and
+ * shape. Components reference these variables; they never hard-code values.
+ *
+ * Brand values come from INPUT_FILES/CONTENT_AND_DESIGN.md.
+ *
+ * Breakpoints (CSS custom properties cannot be used inside @media, so these
+ * literal widths are repeated in component stylesheets — keep them in sync):
+ *   - base     : 0–767px     mobile (styles are written mobile-first)
+ *   - tablet   : min-width 768px
+ *   - desktop  : min-width 1024px
+ */
+
+:root {
+  /* Brand palette */
+  --color-midnight: #102a43;
+  --color-teal: #087e8b;
+  --color-sunrise: #f0a447;
+  --color-mist: #eaf4f4;
+  --color-white: #ffffff;
+  --color-ink: #17324d;
+
+  /* Derived colours (tints/shades of the palette, plus status colours) */
+  --color-teal-dark: #066570; /* hover state for teal buttons */
+  --color-page: #f5f9f9; /* default page background */
+  --color-border: #d5e3e6; /* card + divider borders */
+  --color-border-strong: #b7cdd2; /* form control borders */
+  --color-on-dark-muted: #d9e2ec; /* secondary text on midnight */
+  --color-error: #b42318;
+  --color-error-bg: #fdecea;
+  --color-success-bg: #e3f4f1;
+
+  /* Keyboard focus ring. Overridden on dark backgrounds for contrast. */
+  --color-focus: var(--color-teal);
+
+  /* Typography — local system fonts only (no remote font requests). */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-h2: clamp(1.625rem, 1.25rem + 1.6vw, 2.25rem);
+  --font-size-h1: clamp(2.125rem, 1.5rem + 3vw, 3.5rem);
+
+  /* Spacing scale (4px base) */
+  --space-1: 0.25rem; /*  4px */
+  --space-2: 0.5rem; /*  8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+  --space-20: 5rem; /* 80px */
+
+  /* Shape */
+  --radius-card: 1rem; /* cards and the form panel */
+  --radius-cta: 12px; /* buttons, per brand guide */
+  --radius-control: 10px; /* inputs */
+
+  /* Layout */
+  --container-max: 1120px; /* per brand guide */
+  --gutter: var(--space-5); /* side padding at mobile widths */
+  --header-height: 64px; /* compact mobile header */
+  --section-padding: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: var(--space-8);
+    --header-height: 80px; /* desktop header height per brand guide */
+    --section-padding: var(--space-16);
+  }
+}

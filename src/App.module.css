@@ -1,0 +1,22 @@
+/* Hidden off-screen until it receives keyboard focus. */
+.skipLink {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 100;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-control);
+  background: var(--color-midnight);
+  color: var(--color-white);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.skipLink:focus {
+  transform: none;
+}
+
+/* <main> is focused programmatically by the skip link; no ring needed there. */
+.main:focus {
+  outline: none;
+}

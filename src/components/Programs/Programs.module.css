@@ -1,0 +1,26 @@
+.card {
+  composes: card from '../../styles/layout.module.css';
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--color-mist);
+}
+
+.duration {
+  order: -1; /* shown above the program name */
+  margin: 0;
+  color: var(--color-teal);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.name {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.description {
+  margin: 0;
+}

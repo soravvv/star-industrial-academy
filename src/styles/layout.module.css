@@ -1,0 +1,36 @@
+/*
+ * Shared layout primitives. Components `composes:` these classes rather than
+ * repeating the same declarations (keeps the CSS DRY).
+ */
+
+/* Centres content at the brand max-width (1120px) with responsive gutters. */
+.container {
+  width: 100%;
+  max-width: calc(var(--container-max) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Unstyled list that lays its items out as cards:
+   1 column on mobile → 3 equal columns from tablet up. */
+.cardGrid {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .cardGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-5);
+  }
+}
+
+/* Base card shape; each component adds its own colours. */
+.card {
+  height: 100%;
+  padding: var(--space-6);
+  border-radius: var(--radius-card);
+}

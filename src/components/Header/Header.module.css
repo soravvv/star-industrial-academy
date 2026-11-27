@@ -1,0 +1,165 @@
+.header {
+  position: sticky; /* also the positioning context for the mobile menu */
+  top: 0;
+  z-index: 10;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.inner {
+  composes: container from '../../styles/layout.module.css';
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.brand {
+  display: inline-flex;
+  border-radius: 6px;
+}
+
+.brand img {
+  width: auto;
+  height: 32px;
+}
+
+/* ---- Mobile menu button (three bars that morph into an X) ---- */
+
+.menuToggle {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: var(--color-mist);
+  color: var(--color-midnight);
+  cursor: pointer;
+}
+
+.menuIcon,
+.menuIcon::before,
+.menuIcon::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.menuIcon {
+  position: relative;
+}
+
+.menuIcon::before,
+.menuIcon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.menuIcon::before {
+  top: -6px;
+}
+
+.menuIcon::after {
+  top: 6px;
+}
+
+.menuToggle[aria-expanded='true'] .menuIcon {
+  background: transparent;
+}
+
+.menuToggle[aria-expanded='true'] .menuIcon::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menuToggle[aria-expanded='true'] .menuIcon::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ---- Navigation: dropdown panel on mobile ---- */
+
+.nav {
+  display: none; /* also removes the links from the tab order while closed */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 12px 24px rgb(16 42 67 / 0.08);
+}
+
+.navOpen {
+  display: block;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: var(--space-2) var(--gutter) var(--space-6);
+  list-style: none;
+}
+
+.navLink {
+  display: block;
+  padding: var(--space-3) 0;
+  color: var(--color-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: var(--color-teal);
+}
+
+.navCta {
+  margin-top: var(--space-3);
+}
+
+.navCta a {
+  width: 100%;
+}
+
+/* ---- Navigation: inline row from tablet up ---- */
+
+@media (min-width: 768px) {
+  .menuToggle {
+    display: none;
+  }
+
+  .nav {
+    display: block;
+    position: static;
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .navList {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-8);
+    padding: 0;
+  }
+
+  .navLink {
+    padding: var(--space-2) 0;
+    font-weight: 400;
+  }
+
+  .navCta {
+    margin: 0 0 0 var(--space-6);
+  }
+
+  .navCta a {
+    width: auto;
+    min-width: 8rem;
+  }
+}

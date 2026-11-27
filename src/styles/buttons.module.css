@@ -1,0 +1,55 @@
+/*
+ * Button styles shared by links (<a>) and real <button>s.
+ * Use `buttons.primary` or `buttons.text`; both compose the `.button` base.
+ */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px; /* comfortable touch target */
+  padding: 0 var(--space-5);
+  border: 0;
+  border-radius: var(--radius-cta);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+/* Filled teal call-to-action. */
+.primary {
+  composes: button;
+  background: var(--color-teal);
+  color: var(--color-white);
+}
+
+.primary:hover {
+  background: var(--color-teal-dark);
+}
+
+.primary:disabled {
+  cursor: progress;
+  opacity: 0.75;
+}
+
+/* Low-emphasis action that looks like a bold link. */
+.text {
+  composes: button;
+  padding-inline: var(--space-1);
+  background: transparent;
+  color: var(--color-teal);
+}
+
+.text:hover {
+  text-decoration: underline;
+}
+
+/* Modifier: stretch to fill the parent's width. */
+.fullWidth {
+  width: 100%;
+}
