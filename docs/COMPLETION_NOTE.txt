@@ -1,0 +1,49 @@
+STAR INDUSTRIAL ACADEMY — Responsive React Landing Page
+Job ID: G3CFsDMsYlpsrygVJsFZ
+Completed: 27 November 2026
+Compensation: INR 701 (fixed, as agreed)
+
+REPOSITORY
+https://github.com/soravvv/star-industrial-academy  (private; reviewer access granted on request)
+
+LIVE DEPLOYMENT (Vercel)
+https://star-industrial-academy.vercel.app
+
+WHAT WAS DELIVERED
+- React 18 + Vite single-page site with reusable components: Header (accessible
+  mobile menu), Hero, Benefits, Programs, How It Works, Registration form, FAQ, Footer.
+- CSS Modules, mobile-first, shared design tokens; breakpoints at 768px and 1024px.
+- Controlled registration form: required + email validation, consent, accessible
+  error text, disabled state while submitting, success and error states.
+- Integration with the supplied local registration API (POST /api/register).
+- Unit tests (18) for validation and the API client: `npm test`.
+- README.md covering components, development/build, assets, API setup and the
+  live-environment limitation below.
+- docs/ACCEPTANCE_TEST_LOG.csv (15/15 Pass) and docs/screenshots/.
+
+TESTED ENVIRONMENTS
+- Chromium (Claude desktop app browser pane) at 375×812, 768×1024 and 1440×900:
+  layout, no horizontal overflow (document width equals viewport width),
+  mobile menu, keyboard tab order, FAQ via Enter/Space, form validation.
+- Development build against the supplied local API (Python 3): valid request → 201,
+  invalid fields → 422 (also checked with curl), API stopped → error message.
+- Production build (vite preview and the live Vercel URL): no console errors,
+  local confirmation mode, no network request on submit.
+- Headless Chrome full-page captures at 1440px and 768px.
+
+LIVE-ENVIRONMENT LIMITATION
+The supplied API is a localhost-only test receiver and no production endpoint was
+provided. The hosted site therefore runs in local confirmation mode: it validates
+in the browser, shows a notice that details are not sent anywhere, and makes no
+network request on submit. To connect a real backend, set VITE_REGISTRATION_API_URL
+to an approved HTTPS endpoint in Vercel and redeploy (see README).
+
+REMAINING ISSUES / NOTES
+- Not tested in Safari or Firefox, or on physical phones; testing used Chromium
+  with viewport emulation.
+- At 1440px the hero highlight ribbon wraps onto two lines, because the approved
+  copy ("Flexible learning format") is longer than the design mock-up's text.
+- A "How it works" section is included because the content guide lists it,
+  although it does not appear in the design references.
+- The per-deployment Vercel URL is protected by Vercel login; use the production
+  URL above, which is public.

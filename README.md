@@ -4,6 +4,7 @@ A responsive, single-page React landing page for Star Industrial Academy, built
 with Vite and CSS Modules from the supplied desktop (1440px) and mobile (390px)
 design references.
 
+- **Live site:** https://star-industrial-academy.vercel.app
 - **Stack:** React 18 (functional components + hooks), Vite 5, CSS Modules, Vitest
 - **No runtime dependencies** beyond React. No UI kit, no remote fonts, no trackers.
 
